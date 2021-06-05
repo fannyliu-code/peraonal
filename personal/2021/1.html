@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=`, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 统计字符串中“aaaabbbcccddfgh”中字母个数或者最多字母书
+        // reduce用法
+        var fa = [1,2,3,4];
+        function red(a,b){
+            console.log(arguments);
+            return a+b
+        }
+        fa.reduce(red);
+        //Arguments(4) [1, 2, 1, Array(4), callee: ƒ, Symbol(Symbol.iterator): ƒ]  //a=1,b=2    
+        //Arguments(4) [3, 3, 2, Array(4), callee: ƒ, Symbol(Symbol.iterator): ƒ]  //a=3,b=3
+        //Arguments(4) [6, 4, 3, Array(4), callee: ƒ, Symbol(Symbol.iterator): ƒ]  //a=6,b=4
+        // 语法 arr.reduce(callback,[initialValue])
+        //      arr.reduce(function(total,currentValue,currentIndex,arr),initialValue)
+        // 总结 遍历数组元素，从头开始，依次往下，第一个参数是上一次的返回值，第二个参数是下一个数组元素，首次的时候第一个和第二个参数分别是array[0],array[1]
+        const first = [{
+            subject:"math",
+            score:88
+        },
+        {
+            subject:"chinese",
+            score:95
+
+        },
+        {
+            subject:"english",
+            score:80
+        }
+    ];
+    const dis = {
+        math:0.5,
+        chinese:0.3,
+        english:0.2
+    };
+    const sum = first.reduce((index,item) => {
+        return index + item.score * dis[item.subject]
+    },0)
+    console.log(sum);//88.5
+    // 0+88*0.5=44  pre=0,item = {subject:"chinese",score:95}
+    // 44+95*0.3=72.5 pre=44,item={subject:"english",scroe:80}
+    // 72.5+80*0.2=88.5 pre=72.5,item={subject:"chinese",score:95}
+    </script>
+</body>
+</html>
