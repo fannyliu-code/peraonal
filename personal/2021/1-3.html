@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div  id="test">
+        <input type="text" v-model="searchName">
+        <ul>
+            <li v-for="(p,index) in filterPersons" :key="index">
+                {{index}}---{{p.name}}---{{p.age}}
+            </li>
+        </ul>
+        <button @click="setOrderType(1)">年龄升序</button>
+        <button @click="setOrderType(2)">年龄降序</button>
+        <button @click="setOrderType(0)">原本顺序</button>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+        new Vue({
+            el:"#test",
+            
+            data:{
+                searchName:'',
+                orderType:0,//0代表原本顺序，1代表升序，2代表降序
+                persons:[
+                    {name:'tom',age:18},
+                    {name:'jack',age:19},
+                    {name:'sophina',age:17},
+                    {name:'liushenghua',age:14}
+                ],
+            },
+            // computed多个变量或者对象进行处理后返回一个结果值,也就是数多个变量中的某一个值发生了变化则我们监控的这个值也就会发生变化
+            computed:{
+                filterPersons(){
+                    //取出相关的数据
+                    const{searchName,persons,orderType} = this
+                    // 最终需要显示的数组
+                    let fPersons;
+
+                    //对persons进行过滤
+                    // filter()方法创建一个新的数组，新数组中的元素是通过检查指定数组中符合条件的所有元素。
+                    // indexof()方法可返回某个指定的字符串值在字符串中首次出现的位置。
+                   fPersons = persons.filter(p => p.name.indexOf(searchName)!==-1)
+                    
+                    // 排序
+                    if(orderType!=0){
+                        fPersons.sort(function(p1,p2){//如果返回负数，p1在前，返回正数，p2在前
+                            // 1是升序，2是降序
+                            if(orderType === 2){
+                                return p2.age-p1.age
+                            }else{
+                                return p1.age-p2.age //
+                            }
+                            
+
+                        })
+                    }
+
+
+                    return fPersons
+                }
+            },
+            
+            methods:{
+                setOrderType(orderType){
+                    this.orderType = orderType
+                }
+            }
+        })
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- <style>
+        .aClass{
+            color:red;
+        }
+        .bClass{
+            color:blue;
+        }
+        .cClass{
+            font-size: 30px;
+        }
+    </style> -->
+
+</head>
+
+<body>
+    <!-- class绑定与style绑定 -->
+    <!-- <div id="demo"> -->
+    <!-- class绑定  :class='xxx' -->
+    <!-- 
+            xxx是字符串
+            xxx是对象
+            xxx是数组
+         -->
+    <!-- 
+             style绑定
+             :style="{color:activeColor,fontSize:fontSize + 'px'}"
+             其中activeColor/fontSize是data属性
+          -->
+    <!-- <h2>1,class绑定： ：class='xxx'</h2>
+        <p class="cClass" :class="a">xxx是字符串</p>
+
+        <p  :class="{aClass:isA,bClass:is}">xxx是对象</p>
+
+        <h2>2，style绑定</h2>
+
+        <button @click="update">更新</button> -->
+
+
+
+
+
+
+    <!-- </div> -->
+
+
+    <!-- 2,v-if,v-else,v-show -->
+    <div id="index">
+        <!-- 能显示 -->
+        <!-- <p v-if="ok">我喜欢你</p>
+        <p v-else>我不喜欢你</p>
+        <button @click="ok=!ok">切换</button> -->
+
+        <!-- 这个就变成完全隐藏了，立马就看到结果 -->
+        <!-- <p v-show>我喜欢你</p>
+        <p>我不喜欢你</p>
+        <button @click="ok=!ok">切换</button> -->
+
+
+
+
+        <p v-for="(val,key) in user">--键是--{{key}}--值是--{{val}}</p>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+        //1，class与style绑定
+        // new Vue({
+        //     el:'#demo',
+        //     data:{
+        //         a:'aClass',
+        //         isA:ture,
+        //         isB:false
+        //     },
+        //     methods:{
+        //         update(){
+        //             this.a = 'bClass'
+        //             this.isA="true"
+        //             this.isB="false"
+        //         }
+        //     }
+        // })
+
+
+
+        //2,v-if,v-else,v-show
+
+        // new Vue({
+        //     el:"#index",
+        //     data:{
+        //         // ok:false
+        //         ok:false
+
+        //     },
+
+        // })
+
+
+
+        // 1-3 v-for
+        new Vue({
+            el: "#index",
+            data: {
+                user: {
+                    id: 1,
+                    name: '托尼.贾',
+                    gender: '男'
+                }
+            },
+        })
+
+
+
+    </script>
+</body>
+
+</html>
