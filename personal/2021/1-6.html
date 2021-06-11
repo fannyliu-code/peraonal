@@ -1,21 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <script>
+    <!-- <script>
         
-        // 打印0，1，2，3，4，5
-        let arr = [1,2,3,4,5,6]
-        for(let i=0;i<arr.length;i++){
-            setTimeout(() =>{
-                let result = arr[i]
-                console.log(result)
-            },2000)
+        // // 打印0，1，2，3，4，5
+        // let arr = [1,2,3,4,5,6]
+        // for(let i=0;i<arr.length;i++){
+        //     setTimeout(() =>{
+        //         let result = arr[i]
+        //         console.log(result)
+        //     },2000)
+        // }
+
+        const dbName = 'key-val'
+        const storeName = 'keyval'
+
+    export function uglyGet(key: string){
+        // 打开数据库
+        const openDBRequest = indexedDB.open(dbNamed)
+
+        // 创建表
+        openDBRequest.onupgradeneeded
+    }
+    </script> -->
+
+    <script>
+
+        //写出这样一个函数：他可以接受任何非负整数，并以降序返回其数字，本质上讲，请重新排序数字以创建可以的最大数字
+        //n=4253617
+        function descendingOrder(n){
+            let arr = n.toString();
+            let arr0 = new Array();
+            for(let i=0; i<arr.length;i++){
+                arr0.push(Number(arr[i]));
+
+
+            }
+            arr0.sort(function(a,b){
+                return a - b;
+            })
+            n = 0;
+            for(let i=0;i<arr0.length;i++){
+                n += arr0[i] * Math.pow(10,i);
+        
+            }
+            return n;
         }
+
+
+        // let arr = ["2","3","5","6","7","8"];
+        // for(let i = 0;i<arr.length;i++){
+        //     console.log("arr+="+arr[i]);
+        // }
+
+
+        // function descendingOrder(n) {
+        //     // let a = new  Array[1,2,3,4,5,6,7]
+        //     return parseInt(String(n).split('').sort().reverse().join(''));
+           
+        // }
+    
+
     </script>
+
+
 </body>
+
 </html>
