@@ -34,23 +34,41 @@
         // 找出元素item在给定数组arr中的位置
         //如果数组中存在item，则返回元素在数组中的位置，否则返回-1，
 
-        function indexOf(arr,item){
-            if(Array.prototype.indexOf()){
-                return i = arr.indexOf(item);
-            }else{
-                for(var i = 0;i<arr.length;i++){
-                    if(arr[i] === item){
-                        return i;
+        // function indexOf(arr,item){
+        //     if(Array.prototype.indexOf()){
+        //         return i = arr.indexOf(item);
+        //     }else{
+        //         for(var i = 0;i<arr.length;i++){
+        //             if(arr[i] === item){
+        //                 return i;
                     
                         
-                    }
-                }
-            }
+        //             }
+        //         }
+        //     }
         
-            return -1;
-        }
-        var array = [1,2,3,4]
-        console.log(indexOf(array,3));
+        //     return -1;
+        // }
+        // var array = [1,2,3,4]
+        // console.log(indexOf(array,3));
+
+
+        //计算给定数组中arr中所有元素的总和
+        //数组中的元素均为number类型
+
+        function sum(arr) {
+    
+    for(var i=0;i<arr.length;i++){
+         result = Number(arr[i]);
+         var sum =0;
+         sum += result;
+        console.log("sum+="+sum)
+        
+    }
+    
+}
+var array = [1,2,3,4]
+console.log(sum(array));
     </script>
 </body>
 </html>
