@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 1<div id="box">
+        <input type="text" placeholder="" v-model="listValue" @keyup.enter="add" class="list-group-item">
+        <ul class="todo-list">
+            <li class="box-text" v-for="(item,index) in list">
+                <div class="view">
+                    <span>{{index+1}}.</span>
+                    <label for="">{{item}}</label>
+                </div>
+                
+            </li>
+        </ul>
+    </div> -->
+    <!-- 2<div class="train-city">
+        <h3>父组件传给子组件的toCity:{{sendData}}</h3>
+        <br>
+        <button @click = 'select(`大连`)'>点击此处将‘大连‘发射给父组件</button>
+    </div> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        //2 var app=new Vue({
+        //     el:"#box",
+        //     data:{
+        //         list:["吃饭饭","睡觉觉","打豆豆"],
+        //         listValue:"好好学习"
+        //     },
+        //     methods:{
+        //         add:function(){
+        //             this.list.push(this.listValue)
+        //         }
+        //     }
+        // })
+        
+        
+        //2 export default{
+        //     name:'trainCity',
+        //     props:['sendData'],
+        //     methods:{
+        //         select(val){
+        //             let data = {
+        //                 cityname:val
+        //             };
+        //             this.$emit('showCityName',data);//select事件触发后，自动触发showCityName事件
+        //         }
+        //     }
+        // }
+
+
+        //3 var p = new Promise(function(resolve,reject){
+        //     //这里写异步任务
+        //     setTimeout(function(){
+        //         flag = true;
+        //     if(flag){
+        //         console.log('hello')
+        //     }else{
+        //         console.log('出错了')
+        //     }
+        //     })           
+        // });
+        // p.then(function(data){
+        //     console.log(data)
+        // },function(info){
+        //     console.log(info)
+        // })
+
+        // 4function queryData(){
+        //     var p = new Promise(function(resolve,reject){
+        //         var xhr = new XMLHttpRequest();
+        //         xhr.onreadystatechange = function(){
+        //             if(xhr.readyState !=4) return;
+        //             if(xhr.readyState ==4 && xhr.status == 200){
+        //                 resolve(xhr.responseText)
+        //             }else{
+        //                 reject('出错了')
+        //             }
+        //         }
+        //         xhr.open('get','/data')
+        //         xhr.send(null)
+        //     });
+        //     return p;
+        // }
+        // queryData('http://localhost:3000/data')
+        // .then(function(data){
+        //     console.log(data);
+        //     queryData('http://localhost:3000/data1')
+        // })
+        // .then(function(data){
+        //     console.log(data);
+        //     queryData('http://localhost:3000/data2')
+        // })
+        // .then(function(data){
+        //     console.log(data);
+        //     queryData('http://localhost:3000/data3')
+        // })
+
+        fetch('http://localhost:3000/data').then((data) => {
+            return data.text();
+        }).then((data) => {
+            console.log(data)
+        })
+    </script>
+</body>
+</html>
