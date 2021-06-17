@@ -101,10 +101,39 @@
         //     queryData('http://localhost:3000/data3')
         // })
 
-        fetch('http://localhost:3000/data').then((data) => {
-            return data.text();
-        }).then((data) => {
-            console.log(data)
+        //5 fetch('http://  localhost:3000/data').then((data) => {
+        //     //text（）方法属于fetchAPI的一部分，它返回一个Promise实例对象，用户获取后台返回的数据
+    
+        //     return data.text();
+        // }).then((data) => {
+        //     console.log(data)
+        // })
+
+        // 6 fetch('/data?id=123',{
+        //     method:'get'
+        // })
+        // .then((data) => {
+        //     return data.text();
+        // }).then((data) => {
+        //     console.log(data)
+        // })
+
+        //6fetch('http://localhost:3000/books/789',{
+        //     method:'post',
+        //     body:'uname=list&pwd=123',
+        //     headers:{
+        //         'Content-Type':'application/x-www-from-urlencoded'
+        //     }
+        // })
+        // .then((data) => {
+        //     return data.text();
+        // }).then((data) => {
+        //     console.log(data)
+        // }) 
+
+
+        axios.get('http://localhost:3000/data').then(data => {
+            console.log(data.data)
         })
     </script>
 </body>
